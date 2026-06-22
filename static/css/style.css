@@ -255,3 +255,11 @@ footer {
 .figure-section .paper-figure figcaption {
   text-align: center;
 }
+
+.authors sup,
+.affiliation sup {
+  margin-left: 2px;
+  color: var(--accent);
+  font-size: 0.7em;
+  font-weight: 700;
+}
