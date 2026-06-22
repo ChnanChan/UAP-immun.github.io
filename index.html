@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior</title>
-  <meta name="description" content="Project page for Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior, CVPR 2025.">
-  <meta property="og:title" content="Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior">
-  <meta property="og:description" content="A data-free universal attack method that extracts pseudo-semantic priors from UAPs to improve transferability.">
+  <title>Universal Image Immunization against Diffusion-based Image Editing via Semantic Injection</title>
+  <meta name="description" content="Project page for Universal Image Immunization against Diffusion-based Image Editing via Semantic Injection.">
+  <meta property="og:title" content="Universal Image Immunization against Diffusion-based Image Editing via Semantic Injection">
+  <meta property="og:description" content="A universal image immunization framework that protects images against diffusion-based text-guided editing via semantic injection.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,19 +18,21 @@
 <body>
   <main>
     <section class="hero section-narrow">
-      <p class="conference">CVPR 2025</p>
-      <h1>Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior</h1>
+      <p class="conference">arXiv 2026</p>
+      <h1>Universal Image Immunization against Diffusion-based Image Editing via Semantic Injection</h1>
 
       <div class="authors">
         <a href="https://chnanchan.github.io/" target="_blank" rel="noopener">Chanhui Lee</a>
-        <span>Yeonghwan Song</span>
+        <span>Donggyu Choi</span>
+        <span>Seunghyun Shin</span>
+        <span>Hae-gon Jeon</span>
         <a href="https://jeanyson.github.io/" target="_blank" rel="noopener">Jeany Son</a>
       </div>
-      <p class="affiliation">Gwangju Institute of Science and Technology</p>
+      <p class="affiliation">Pohang University of Science and Technology (POSTECH)</p>
 
       <div class="links">
-        <a href="https://arxiv.org/abs/2502.21048" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> Paper</a>
-        <a href="https://arxiv.org/pdf/2502.21048" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+        <a href="https://arxiv.org/abs/2602.14679" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> Paper</a>
+        <a href="https://arxiv.org/pdf/2602.14679" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>
         <a href="https://github.com/ChnanChan/UAP-immun.github.io" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Website</a>
       </div>
     </section>
@@ -38,27 +40,27 @@
     <section class="teaser section-wide">
       <div class="pipeline" aria-label="Conceptual pipeline">
         <div class="panel image-panel clean">
-          <span>Random noise</span>
+          <span>Clean image</span>
         </div>
         <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="panel image-panel semantic">
-          <span>Pseudo-semantic prior</span>
+          <span>Semantic injection</span>
         </div>
         <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="panel image-panel attack">
-          <span>Transferable UAP</span>
+          <span>Immunized image</span>
         </div>
       </div>
-      <h2>Learning universal perturbations without data, by mining pseudo-semantic structure from the perturbation itself.</h2>
+      <h2>A single universal perturbation can immunize images by injecting target semantics and suppressing malicious diffusion-based edits.</h2>
     </section>
 
     <section class="section-narrow content-section">
       <h2>Abstract</h2>
       <p>
-        Data-free Universal Adversarial Perturbation (UAP) is an image-agnostic adversarial attack that deceives deep neural networks using a single perturbation generated solely from random noise without relying on data priors. However, traditional data-free UAP methods often suffer from limited transferability due to the absence of semantic content in random noise.
+        Recent advances in diffusion models have enabled powerful image editing capabilities guided by natural language prompts, unlocking new creative possibilities while also introducing ethical and legal risks such as deepfakes and unauthorized content manipulation. Image immunization has emerged as a promising defense against AI-driven semantic manipulation, but most existing approaches rely on image-specific adversarial perturbations that require individual optimization for each image.
       </p>
       <p>
-        To address this issue, we propose a novel data-free universal attack method that recursively extracts pseudo-semantic priors directly from the UAPs during training to enrich the semantic content within the data-free UAP framework. Our approach leverages latent semantic information within UAPs via region sampling, enabling successful input transformations and significantly enhancing black-box transferability.
+        We propose the first universal image immunization framework that generates a single, broadly applicable adversarial perturbation for diffusion-based editing pipelines. Our method embeds a semantic target into protected images while suppressing original content, misdirecting the editing model's attention and blocking malicious edits through semantic injection.
       </p>
     </section>
 
@@ -66,26 +68,28 @@
       <div>
         <h2>Method Overview</h2>
         <p>
-          The method treats intermediate perturbations as a source of pseudo-semantic cues. Instead of relying on real images, it samples informative regions from evolving UAPs and applies transformations that become effective once semantic structure emerges.
+          Instead of optimizing a separate perturbation for every image, the method learns a universal perturbation that can be applied broadly. The perturbation injects target semantics into the image representation and suppresses original semantic content so text-guided diffusion editors follow the injected target rather than the user's malicious prompt.
         </p>
       </div>
       <div class="method-card">
         <ol>
-          <li>Initialize a data-free universal perturbation.</li>
-          <li>Extract pseudo-semantic priors from the perturbation.</li>
-          <li>Sample and transform informative regions.</li>
-          <li>Reweight hard samples to improve transferability.</li>
+          <li>Generate a universal adversarial perturbation for image immunization.</li>
+          <li>Inject target semantics into protected images.</li>
+          <li>Suppress original content to misdirect diffusion-based editing.</li>
+          <li>Transfer across images and diffusion editing pipelines.</li>
         </ol>
       </div>
     </section>
 
     <section class="section-narrow content-section">
       <h2>BibTeX</h2>
-      <pre class="bibtex"><code>@inproceedings{lee2025datafree,
-  title={Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior},
-  author={Lee, Chanhui and Song, Yeonghwan and Son, Jeany},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2025}
+      <pre class="bibtex"><code>@misc{lee2026universal,
+  title={Universal Image Immunization against Diffusion-based Image Editing via Semantic Injection},
+  author={Lee, Chanhui and Choi, Donggyu and Shin, Seunghyun and Jeon, Hae-gon and Son, Jeany},
+  year={2026},
+  eprint={2602.14679},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
 }</code></pre>
     </section>
   </main>
