@@ -38,19 +38,12 @@
     </section>
 
     <section class="teaser section-wide">
-      <div class="pipeline" aria-label="Conceptual pipeline">
-        <div class="panel image-panel clean">
-          <span>Clean image</span>
-        </div>
-        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="panel image-panel semantic">
-          <span>Semantic injection</span>
-        </div>
-        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="panel image-panel attack">
-          <span>Immunized image</span>
-        </div>
-      </div>
+      <figure class="paper-figure hero-figure">
+        <img src="fig1.png" alt="Universal image immunization comparison and efficiency trade-off">
+        <figcaption>
+          <strong>Universal immunization overview.</strong> Image-specific defenses require slow per-image optimization, while optimization-free defenses still rely on a learned generator at inference time. Our method precomputes a universal perturbation once and protects images with a simple additive operation, achieving GPU-free, near-zero-cost inference while maintaining strong immunization performance.
+        </figcaption>
+      </figure>
       <h2>A single universal perturbation can immunize images by injecting target semantics and suppressing malicious diffusion-based edits.</h2>
     </section>
 
@@ -64,21 +57,24 @@
       </p>
     </section>
 
-    <section class="section-wide content-section two-column">
-      <div>
-        <h2>Method Overview</h2>
-        <p>
-          Instead of optimizing a separate perturbation for every image, the method learns a universal perturbation that can be applied broadly. The perturbation injects target semantics into the image representation and suppresses original semantic content so text-guided diffusion editors follow the injected target rather than the user's malicious prompt.
-        </p>
-      </div>
-      <div class="method-card">
-        <ol>
-          <li>Generate a universal adversarial perturbation for image immunization.</li>
-          <li>Inject target semantics into protected images.</li>
-          <li>Suppress original content to misdirect diffusion-based editing.</li>
-          <li>Transfer across images and diffusion editing pipelines.</li>
-        </ol>
-      </div>
+    <section class="section-wide content-section figure-section">
+      <h2>Method Overview</h2>
+      <figure class="paper-figure">
+        <img src="fig2.png" alt="Target semantic injection framework for universal image immunization">
+        <figcaption>
+          <strong>Target semantic injection.</strong> During training, the universal perturbation is optimized to inject a chosen target semantic into source images while suppressing other source semantics. At inference, the immunized image guides the diffusion editor toward the injected target concept, causing malicious text-guided edits to ignore the original source content and fail.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section-wide content-section figure-section">
+      <h2>Qualitative Results</h2>
+      <figure class="paper-figure">
+        <img src="fig3.png" alt="Qualitative comparison with image immunization baselines">
+        <figcaption>
+          <strong>Comparison with prior defenses.</strong> Across diverse source images and malicious editing prompts, universalized baselines and image-specific methods often preserve or transform the original content according to the prompt. Our universal perturbation redirects the editing process toward the injected target semantic, preventing the intended malicious edit with a single reusable perturbation.
+        </figcaption>
+      </figure>
     </section>
 
     <section class="section-narrow content-section">
