@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior</title>
+  <meta name="description" content="Project page for Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior, CVPR 2025.">
+  <meta property="og:title" content="Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior">
+  <meta property="og:description" content="A data-free universal attack method that extracts pseudo-semantic priors from UAPs to improve transferability.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/site.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="hero section-narrow">
+      <p class="conference">CVPR 2025</p>
+      <h1>Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior</h1>
+
+      <div class="authors">
+        <a href="https://chnanchan.github.io/" target="_blank" rel="noopener">Chanhui Lee</a>
+        <span>Yeonghwan Song</span>
+        <a href="https://jeanyson.github.io/" target="_blank" rel="noopener">Jeany Son</a>
+      </div>
+      <p class="affiliation">Gwangju Institute of Science and Technology</p>
+
+      <div class="links">
+        <a href="https://arxiv.org/abs/2502.21048" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> Paper</a>
+        <a href="https://arxiv.org/pdf/2502.21048" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+        <a href="https://github.com/ChnanChan/UAP-immun.github.io" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Website</a>
+      </div>
+    </section>
+
+    <section class="teaser section-wide">
+      <div class="pipeline" aria-label="Conceptual pipeline">
+        <div class="panel image-panel clean">
+          <span>Random noise</span>
+        </div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="panel image-panel semantic">
+          <span>Pseudo-semantic prior</span>
+        </div>
+        <div class="arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="panel image-panel attack">
+          <span>Transferable UAP</span>
+        </div>
+      </div>
+      <h2>Learning universal perturbations without data, by mining pseudo-semantic structure from the perturbation itself.</h2>
+    </section>
+
+    <section class="section-narrow content-section">
+      <h2>Abstract</h2>
+      <p>
+        Data-free Universal Adversarial Perturbation (UAP) is an image-agnostic adversarial attack that deceives deep neural networks using a single perturbation generated solely from random noise without relying on data priors. However, traditional data-free UAP methods often suffer from limited transferability due to the absence of semantic content in random noise.
+      </p>
+      <p>
+        To address this issue, we propose a novel data-free universal attack method that recursively extracts pseudo-semantic priors directly from the UAPs during training to enrich the semantic content within the data-free UAP framework. Our approach leverages latent semantic information within UAPs via region sampling, enabling successful input transformations and significantly enhancing black-box transferability.
+      </p>
+    </section>
+
+    <section class="section-wide content-section two-column">
+      <div>
+        <h2>Method Overview</h2>
+        <p>
+          The method treats intermediate perturbations as a source of pseudo-semantic cues. Instead of relying on real images, it samples informative regions from evolving UAPs and applies transformations that become effective once semantic structure emerges.
+        </p>
+      </div>
+      <div class="method-card">
+        <ol>
+          <li>Initialize a data-free universal perturbation.</li>
+          <li>Extract pseudo-semantic priors from the perturbation.</li>
+          <li>Sample and transform informative regions.</li>
+          <li>Reweight hard samples to improve transferability.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-narrow content-section">
+      <h2>BibTeX</h2>
+      <pre class="bibtex"><code>@inproceedings{lee2025datafree,
+  title={Data-free Universal Adversarial Perturbation with Pseudo-semantic Prior},
+  author={Lee, Chanhui and Song, Yeonghwan and Son, Jeany},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      This website design is inspired by the <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies project page</a>.
+    </p>
+  </footer>
+</body>
+</html>
